@@ -36,3 +36,10 @@ git commit -m "Add theme as go submodule"
 git remote add origin git@github.com:mesbah-uddin/random.git
 git branch -M master
 git push -u origin master
+
+## [Create gh-pages branch](https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/)
+git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initialize gh-pages branch"
+git push origin gh-pages
+git checkout master
