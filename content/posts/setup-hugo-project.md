@@ -33,13 +33,21 @@ git add .
 git commit -m "Add theme as go submodule"
 ```
 ## Push to remote
+```shell
 git remote add origin git@github.com:mesbah-uddin/random.git
 git branch -M master
 git push -u origin master
+```
 
 ## [Create gh-pages branch](https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/)
+```shell
 git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m "Initialize gh-pages branch"
 git push origin gh-pages
 git checkout master
+```
+
+## Add gh-pages deploy workflow from [actions-hugo](https://github.com/peaceiris/actions-hugo)
+Add workflow .github/workflows/gh-pages.yml.
+Change  branch to `master` and use `extended` hugo.
