@@ -1,7 +1,7 @@
 ---
 title: "Setup Hugo Project"
 date: 2021-05-31T20:18:01+09:00
-draft: true
+draft: false
 ---
 
 # @random
@@ -51,3 +51,13 @@ git checkout master
 ## Add gh-pages deploy workflow from [actions-hugo](https://github.com/peaceiris/actions-hugo)
 Add workflow .github/workflows/gh-pages.yml.
 Change  branch to `master` and use `extended` hugo.
+
+## Add SSH deploy key
+Generate and set deploy keys as in [actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
+
+```shell
+ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages-random -N ""
+```
+Add keys in the repository settings:
+- add public key as deploy key, allow write access
+- set secret key as ACTIONS_DEPLOY_KEY
